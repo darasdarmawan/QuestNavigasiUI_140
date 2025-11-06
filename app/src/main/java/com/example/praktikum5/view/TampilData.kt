@@ -3,6 +3,7 @@ package com.example.praktikum5.view
 import android.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.HorizontalDivider
@@ -18,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.material3.DividerDefaults.Thickness
 
 @Composable
 fun FormIsian(
@@ -51,6 +53,13 @@ fun FormIsian(
                 .padding(20.dp)
                 .width(250.dp), thickness = Thickness, color =
                 Color.Red)
+            Row {
+                jenisK.forEach {
+                    item->
+                    Row(verticalAlignment = Alignment.CenterHorizontally){
+                    }
+                }
+            }
         }
 
     }
