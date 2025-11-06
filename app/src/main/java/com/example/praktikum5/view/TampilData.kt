@@ -1,6 +1,7 @@
 package com.example.praktikum5.view
 
 import android.R
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -12,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -40,7 +42,16 @@ fun TampilData(
         }) { isiRuang->
         Column (
             modifier = Modifier.padding(isiRuang),
-        )
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Column(
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
+                verticalArrangement = Arrangement.spacedBy(dimensionResource
+                    (id = R.dimen.padding_small))
+            ){
+
+            }
+        }
 
     }
 }
