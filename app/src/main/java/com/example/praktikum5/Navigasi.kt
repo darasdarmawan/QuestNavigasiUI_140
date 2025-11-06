@@ -1,9 +1,34 @@
 package com.example.praktikum5
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.example.praktikum5.view.FormIsian
+import com.example.praktikum5.view.TampilData
 
 @Composable
 fun DataApp(
+    navController: NavController = rememberNavController(),
+    modifier: Modifier
+) {
+    Scaffold { isiRuang->
+        val navHost = NavHost(
+        navController = navController,
+        startDestination = Navigasi.Formulirku.name,
 
-)
+        modifier = Modifier.padding(isiRuang)) {
+            composable(route = Navigasi.Formulirku.name){
+                FormIsian (
+                    OnSubmitBtnClick = {
+                        navController.navigate(route = Navigasi.Detail.name)
+                    }
+                )
+            }
+
+        }
+    }
+}
