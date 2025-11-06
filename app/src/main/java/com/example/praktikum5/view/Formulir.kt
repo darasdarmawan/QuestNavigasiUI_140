@@ -25,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.DividerDefaults.Thickness
 import androidx.compose.material3.RadioButton
+import androidx.compose.ui.Alignment
 
 @Composable
 fun FormIsian(
@@ -61,7 +62,7 @@ fun FormIsian(
             Row {
                 jenisK.forEach {
                     item->
-                    Row(verticalAlignment = Alignment.CenterHorizontally){
+                    Row(verticalAlignment = Alignment.CenterVertically) {
                         RadioButton(
                             selected = false,
                             onClick = {item}
@@ -88,7 +89,9 @@ fun FormIsian(
             Button(
                 modifier = Modifier.fillMaxWidth(1f),
                 onClick = OnSubmitBtnClick
-            ) { }
+            ) {
+                Text(stringResource(id = R.string.submit))
+            }
         }
 
     }
